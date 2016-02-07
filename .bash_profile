@@ -1,7 +1,7 @@
 # -------------------------- BASH PROFILE --------------------------
-#export PS1="________________________________________________________________________________\n| \w @ \h (\u) \n| => "
-export PS2=" | => "
-# ----------------------------------------------------------------------------------------------
+PS1='[\W$(__git_ps1 " (%s)")]\$ '
+export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+
 # SHORTCUTS TO MAKE THE TERMINAL BETTER
 # ----------------------------------------------------------------------------------------------
 
@@ -30,6 +30,4 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 # GIT CONFIGURATION
 # ----------------------------------------------------------------------------------------------
 source ~/.git-prompt.sh
-PS1='[\W$(__git_ps1 " (%s)")]\$ '
-export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 source ~/.git-completion.bash

@@ -1,6 +1,10 @@
-# -------------------------- BASH PROFILE --------------------------
+# ----------------------------------------------------------------------------------------------
+# SET UP 
+# ----------------------------------------------------------------------------------------------
 PS1='[\W$(__git_ps1 " (%s)")]\$ '
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
 
 # ----------------------------------------------------------------------------------------------
 # SHORTCUTS TO MAKE THE TERMINAL BETTER
@@ -15,10 +19,6 @@ alias g='grep -i'               # Case-insensitive grep
 alias get='curl -OL'            # Downloads a file to the local disk
 alias chrome='open -a "Google Chrome"'   # Opens with Google Chrome
 alias push='push_config_files'  # Executes command to push config files to GitHub
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
 
 # ----------------------------------------------------------------------------------------------
 # PATH ENVIRONMENT VARIABLE ADDITIONS
@@ -31,3 +31,8 @@ export PATH=$PATH:~/bin         # Allows all files in bin to execute by typing i
 # ----------------------------------------------------------------------------------------------
 source ~/.git-prompt.sh
 source ~/.git-completion.bash
+
+# ----------------------------------------------------------------------------------------------
+# RUBY CONFIG
+# ----------------------------------------------------------------------------------------------
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
